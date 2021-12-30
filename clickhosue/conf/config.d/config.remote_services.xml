@@ -10,7 +10,7 @@
                     <host>172.21.214.52</host>
                     <port>9000</port>
                     <user>default</user>
-                    <password>IARYxRcr</password>
+                    <password>xxx</password>
                 </replica>
             </shard> 
         </logs>
