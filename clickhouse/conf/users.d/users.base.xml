@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yandex>
+    <!-- Profiles of settings. -->
+    <profiles replace="replace">
+        <!-- Default settings. -->
+        <default>
+            <background_pool_size>32</background_pool_size>
+            <background_schedule_pool_size>32</background_schedule_pool_size>
+            <background_move_pool_size>16</background_move_pool_size>
+            <max_memory_usage_for_all_queries>100000000000</max_memory_usage_for_all_queries>
+            <max_memory_usage>10000000000</max_memory_usage>
+            <max_partitions_per_insert_block>1000</max_partitions_per_insert_block>
+            <use_uncompressed_cache>0</use_uncompressed_cache>
+            <load_balancing>random</load_balancing>
+            <enable_scalar_subquery_optimization>0</enable_scalar_subquery_optimization>
+            <joined_subquery_requires_alias>0</joined_subquery_requires_alias>
+            <log_queries>1</log_queries>
+        </default>
+       
+        <readonly>
+            <readonly>1</readonly>
+            <!-- Maximum memory usage for processing single query, in bytes. 18.6 G-->
+            <max_memory_usage>20000000000</max_memory_usage>
+            <max_memory_usage_for_all_queries>100000000000</max_memory_usage_for_all_queries>
+            <use_uncompressed_cache>0</use_uncompressed_cache>
+            <load_balancing>random</load_balancing>
+        </readonly>
+
+    </profiles>
+    <!-- Users and ACL. -->
+    <users replace="replace">
+        <!-- If user name was not specified, 'default' user is used. -->
+        <default>
+            <password_sha256_hex>d306713387f035c240b06ea376bb359104061eebc28bdcb2e65b3f7655600a02</password_sha256_hex>
+            <networks incl="networks" replace="replace">
+                <ip>::/0</ip>
+            </networks>
+            <profile>default</profile>
+            <!-- Quota for user. -->
+            <quota>default</quota>
+        </default>
+    </users>
+    <!-- Quotas. -->
+    <quotas replace="replace">
+        <!-- Name of quota. -->
+        <default>
+            <!-- Limits for time interval. You could specify many intervals with different limits. -->
+            <interval>
+                <!-- Length of interval. -->
+                <duration>3600</duration>
+                <!-- No limits. Just calculate resource usage for time interval. -->
+                <queries>0</queries>
+                <errors>0</errors>
+                <result_rows>0</result_rows>
+                <read_rows>0</read_rows>
+                <execution_time>0</execution_time>
+            </interval>
+        </default>     
+    </quotas>
+</yandex>

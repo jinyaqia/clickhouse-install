@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<clickhouse>
+    <remote_servers replace="replace">
+        <logs>
+             <!-- yunpan -->
+            <shard>
+                <weight>1</weight>
+                <internal_replication>false</internal_replication>
+                <replica>
+                    <host>172.21.214.52</host>
+                    <port>9000</port>
+                    <user>default</user>
+                    <password>xxx</password>
+                </replica>
+            </shard> 
+        </logs>
+    </remote_servers>
+</clickhouse>

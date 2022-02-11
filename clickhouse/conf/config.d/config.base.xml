@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clickhouse>
+    <http_port>8123</http_port>
+    <tcp_port>9000</tcp_port>
+    <listen_host>0.0.0.0</listen_host>
+    <interserver_http_port>9009</interserver_http_port>
+    <interserver_http_host>##INNER_IP##</interserver_http_host>
+    <path>/data/clickhouse</path>
+    <merge_tree>
+        <use_minimalistic_part_header_in_zookeeper>1</use_minimalistic_part_header_in_zookeeper>
+        <max_replicated_merges_in_queue>400</max_replicated_merges_in_queue>
+        <max_replicated_mutations_in_queue>400</max_replicated_mutations_in_queue>
+    </merge_tree>
+    <tmp_path>/data/clickhouse/tmp/</tmp_path>
+    <max_concurrent_queries>1000</max_concurrent_queries>
+    <max_table_size_to_drop>0</max_table_size_to_drop>
+    <max_partition_size_to_drop>0</max_partition_size_to_drop>
+</clickhouse>

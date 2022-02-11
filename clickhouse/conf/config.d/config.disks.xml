@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clickhouse>
+ <storage_configuration>
+        <disks>            
+            <default>
+             <keep_free_space_bytes>1048576000</keep_free_space_bytes>
+            </default>
+            <data1>
+                <path>/data/clickhouse/data1/</path>
+                <keep_free_space_bytes>1048576000</keep_free_space_bytes>
+            </data1>
+            <data2>
+                <path>/data/clickhouse/data2/</path>
+                <keep_free_space_bytes>1048576000</keep_free_space_bytes>
+            </data2>
+        </disks>
+        <policies>
+            <default>
+            <volumes>
+                <cold>
+                    <disk>default</disk>
+                    <disk>data1</disk>
+                    <disk>data2</disk>
+                </cold>            
+            </volumes>
+            </default>
+          </policies>
+    </storage_configuration>
+</clickhouse>
